@@ -39,8 +39,9 @@
 }
 
 @mixin line-vertical() {
-  height: 117px;
-  border-right: 1px solid #E6E9EA;
+  height: 200px;
+  padding: 0px 65px;
+  // border-right: 1px solid #E6E9EA;
 }
 @mixin line-horizontial() {
 	width: 50%;
