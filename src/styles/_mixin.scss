@@ -1,0 +1,57 @@
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: 320px) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: 321px) and (max-width: 1023px) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: 1024px) { @content; }
+  }
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin centered() {
+  text-align: center;
+}
+
+@mixin remove-left-padding() {
+  padding-left: 0px !important;
+}
+
+@mixin remove-both-padding() {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+@mixin remove-right-padding() {
+  padding-right: 0px !important;
+}
+
+@mixin line-vertical() {
+  height: 117px;
+  border-right: 1px solid #E6E9EA;
+}
+@mixin line-horizontial() {
+	width: 50%;
+	margin: 0 auto;
+  border-bottom: 1px solid #E6E9EA;
+}
+@mixin sub-with-border() {
+  border-top: 1px solid #E6E9EA;
+  border-bottom: 1px solid #E6E9EA;
+}
+
+@mixin sub-with-margin() {
+  margin-top: 50px;
+}
