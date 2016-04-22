@@ -1,7 +1,9 @@
-// import reset scss
-@import 'reset';
-@import 'colors';
-@import 'mixin';
+// Import modules
+@import 'modules/colors';
+@import 'modules/mixin';
+
+// import partials scss
+@import 'partials/reset';
 
 $p-font-family: OpenSans-Light;
 body{
@@ -44,7 +46,7 @@ body{
 
 //MAIN
 .mobile-layout-nav{
-  
+
   @include respond-to(handhelds) { display: block;}
   @include respond-to(medium-screens) { display: block;}
   @include respond-to(wide-screens) { display: none;}
@@ -429,11 +431,6 @@ body{
   @include respond-to(handhelds) { @include centered; height: auto; padding-bottom: 10%;}
   @include respond-to(medium-screens) { @include centered; height: auto; padding-bottom: 10%;}
   
-  .line{
-    @include respond-to(handhelds) { @include line-horizontial; }
-    @include respond-to(medium-screens) { @include line-horizontial; }
-    @include respond-to(wide-screens) { @include line-vertical; }
-  }
   .line-container{
 
     @include respond-to(handhelds) { padding: 35px 0px; }
@@ -444,6 +441,12 @@ body{
       @include respond-to(handhelds) { @include line-horizontial; }
       @include respond-to(medium-screens) { @include line-horizontial; }
       @include respond-to(wide-screens) { @include line-vertical; }
+
+      > img{
+        @include respond-to(handhelds) { display: none; }
+        @include respond-to(medium-screens) { display: none; }
+        @include respond-to(wide-screens) { display: block; }
+      }
     }
   }
   h1{
@@ -455,7 +458,7 @@ body{
   } 
 
   .new-blog-content{
-    width: 421px;
+    width: 100%;
 
     @include respond-to(handhelds) { @include centered; margin: 0 auto;}
     @include respond-to(medium-screens) { @include centered; margin: 0 auto;}
