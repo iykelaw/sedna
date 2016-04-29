@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 
 	<head>
 		<meta charset="utf-8">
@@ -7,14 +10,49 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="icon" href="../images/sedna-icon.png">
+
+    <meta property="og:title" content="Design, collaborate, win."/>
+    <meta property="og:image" content=""/>
+    <meta property="og:site_name" content="Sedna"/>
+    <meta property="og:url" content=""/>
+    <meta property="og:description" content="Introducing “Sedna”. A responsive one page website, designed & developed by Peter Finlan, exclusively for Codrops."/>
+
+    <!-- <meta property="og:type" content="blog"/> -->
+
 	
     <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/animate.css">
 		<link rel="stylesheet" href="../styles/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
+    <!-- Add jQuery library -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+		<!-- Add mousewheel plugin (this is optional) -->
+		<script type="text/javascript" src="../scripts/vendor/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+		<!-- Add fancyBox -->
+		<link rel="stylesheet" href="../scripts/vendor/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+		<script type="text/javascript" src="../scripts/vendor/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+		<!-- Optionally add helpers - button, thumbnail and/or media -->
+		<link rel="stylesheet" href="../scripts/vendor/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+		<script type="text/javascript" src="../scripts/vendor/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+		<script type="text/javascript" src="../scripts/vendor/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+		<link rel="stylesheet" href="../scripts/vendor/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+		<script type="text/javascript" src="../scripts/vendor/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+	
+
+    <script src="../scripts/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
   </head>
   <body>
+      <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
   	<div class="wapper" id="home">
 			<div class="mobile-layout-nav" id="mobile-nav">
     	 <!-- Navigation -->
@@ -22,7 +60,7 @@
 	        <div class="container">
 	            <!-- Brand and toggle get grouped for better mobile display -->
 	            <div class="navbar-header page-scroll">
-	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
 	                    <span class="sr-only">Toggle navigation</span>
 	                    <span class="icon-bar"></span>
 	                    <span class="icon-bar"></span>
@@ -32,46 +70,11 @@
 	            </div>
 
 	            <!-- Collect the nav links, forms, and other content for toggling -->
-	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	              <ul class="nav navbar-nav navbar-right">
+	            <div class="collapse navbar-collapse" id="navbar">
+	              <ul class="nav navbar-nav navbar-left  top-links">
 	                <li class="hidden">
 	                    <a href="#page-top"></a>
 	                </li>
-	                <li>
-	                    <a class="page-scroll" href="#">FEATURES</a>
-	                </li>
-	                <li>
-	                    <a class="page-scroll" href="#">ASSETS</a>
-	                </li>
-	                <li>
-	                    <a class="page-scroll" href="#">BLOG</a>
-	                </li>
-	                <li>
-	                    <a class="page-scroll" href="#">DOWNLOAD</a>
-	                </li>
-	                <li>
-	                    <a class="page-scroll" href="#">LOG IN</a>
-	                </li>
-									<li>
-										<a class="page-scroll" href="#">SIGN UP</a>
-									</li>
-	              </ul>
-	            </div>
-	            <!-- /.navbar-collapse -->
-	        </div>
-	        <!-- /.container-fluid -->
-	    </nav>
-		</div>
-			<div class="header-content">
-				<div class="header-div">
-					<div class="container">
-	  				<div class="nav-content">
-							<nav>
-								<ul class="nav pull-left logo">
-									<a href="">S<span class="eee">E</span>DNA</a>
-								</ul>
-
-			  				<ul class="nav pull-left top-links">
 			  					<li><a href="#">FEATURES</a></li>
 			  					<li><a href="#">ASSETS</a></li>
 			  					<li><a href="#">BLOG</a></li>
@@ -82,10 +85,15 @@
 			  					<a class="btn mybtn" href="#">LOG IN</a>
 			  					<a class="btn mybtn active" href="#">SIGN UP</a>
 			  				</ul>
-			  			</nav>
-			  		</div>
-			  		<div class="keyline"></div>
-		  		</div>
+	            </div>
+	            <!-- /.navbar-collapse -->
+			  		<div class="keyline"></div> <!-- /.keyline -->
+	        </div>
+	        <!-- /.container-fluid -->
+	    </nav>
+		</div>
+			<div class="header-content">
+				<div class="header-div">
 					<header class="centered">
 	  				<div class="header-wrapper">
 	  					<div class="header-title">
@@ -97,14 +105,14 @@
 		  					<button class="btn my-header-btn" href="#">LEARN MORE</button>
 		  				</div>
 	  				</div>
-	  				<div class="arrow-down"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+	  				<div class="arrow-down floating-arrow"><a href="#intro"><i class="fa fa-angle-down" aria-hidden="true"></i></a></div>
 	  			</header>
 				</div>
   			
   		</div>
 
-  		<div class="container">
-  			<section class="intro">
+  		<section class="intro" id="intro">
+  			<div class="container">
   				<div class="row">
   					<div class="col-md-4">
   						<div class="intro-content">
@@ -136,48 +144,49 @@
   						</div>
   					</div>
   				</div>
-  			</section>
-  		</div>
+  			</div>
+  		</section>
 
-  		<!-- <div class="featuers">
-				<section class="product-section"> -->
-			<div class="product">
-				<div class="">
-					<div class="col-md-6 remove-left-padding">
-						<div class="productImg"><img src="../images/ipad-iphone.png" alt=""></div>
-					</div>
-					<div class="col-md-4">
-  					<div class="moblie-img-content">
-  						<h1>Sedna will drive your product forward</h1>
-	  					<p>Present your product, start up, or portfolio in a beautifully modern way. Turn your visitors in to clients.</p>
+  		<!-- <div class="featuers"> -->
+			<section class="product-section">
+				<div class="product">
+					<div class="">
+						<div class="col-md-7 remove-left-padding">
+							<div class="productImg"><img src="../images/ipad-iphone.png" alt=""></div>
+						</div>
+						<div class="col-md-5">
+	  					<div class="moblie-img-content">
+	  						<h1>Sedna will drive your product forward</h1>
+		  					<p>Present your product, start up, or portfolio in a beautifully modern way. Turn your visitors in to clients.</p>
 
-	  					<div class="sub-content sub-with-margin">
-	  						<div class="row-img"><img src="../images/recycle.png" alt=""></div>
-	  						<div class="row-content">
-		  						<h1>UNIVERSAL & RESPONSIVE</h1>
-		  						<p>Sedna is universal and will look smashing on any device.</p>
-	  						</div>
+		  					<div class="sub-content sub-with-margin">
+		  						<div class="row-img"><img src="../images/recycle.png" alt=""></div>
+		  						<div class="row-content">
+			  						<h1>UNIVERSAL & RESPONSIVE</h1>
+			  						<p>Sedna is universal and will look smashing on any device.</p>
+		  						</div>
+		  					</div>
+
+		  					<div class="sub-content sub-with-border">
+		  						<div class="row-img"><img src="../images/user.png" alt=""></div>
+		  						<div class="row-content">
+			  						<h1>USER CENTRIC DESIGN</h1>
+			  						<p>Design UX first, allowing for ease of use and user centric behaviours.</p>
+		  						</div>
+		  					</div>
+
+		  					<div class="sub-content">
+		  						<div class="row-img"><img src="../images/becker.png" alt=""></div>
+		  						<div class="row-content">
+			  						<h1>CLEAN, REUSABLE CODE</h1>
+			  						<p>Download and re-use the code for any other project you like.</p>
+		  						</div>
+		  					</div>
 	  					</div>
-
-	  					<div class="sub-content sub-with-border">
-	  						<div class="row-img"><img src="../images/user.png" alt=""></div>
-	  						<div class="row-content">
-		  						<h1>USER CENTRIC DESIGN</h1>
-		  						<p>Design UX first, allowing for ease of use and user centric behaviours.</p>
-	  						</div>
-	  					</div>
-
-	  					<div class="sub-content">
-	  						<div class="row-img"><img src="../images/becker.png" alt=""></div>
-	  						<div class="row-content">
-		  						<h1>CLEAN, REUSABLE CODE</h1>
-		  						<p>Download and re-use the code for any other project you like.</p>
-	  						</div>
-	  					</div>
-  					</div>
-  				</div>
-				</div>	
-			</div>
+	  				</div>
+					</div>	
+				</div>
+			</section>
 
 			<div class="design">
 				<div class="">
@@ -207,7 +216,7 @@
 	  				<p>Change/swap/edit every aspect of Sedna before you hit development with the included Sketch file.</p>
 	  				<a class="btn" href="#">DOWNLOAD NOW!</a href="#">
 	  			</div>
-	  			<div class="customise-img">
+	  			<div class="customise-img floating-logo">
 	  				<img src="../images/Sketch.png" alt="">
 	  			</div>
   			</div>
@@ -236,35 +245,55 @@
 				</div>
 			</div>
 
-			<div class="gallery">
+			<section class="gallery">
 				<div class="gallery-holder">
 					<div class="col-md-4 remove-both-padding">
-						<img src="../images/gallery.png" alt="">
-						<div class="gallery-content centered">
-							<h4>PRODUCT</h4>
-							<a href="#">Getting started with Sedna <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-						</div>
+						<figure>
+							<a class="fancybox" rel="group" href="../images/gallery.png">
+								<div class="img-overlay">
+									<div class="overlay"><i class="fa fa-search" aria-hidden="true"></i></div>
+									<img src="../images/gallery.png">
+								</div>
+							</a>
+							<figcaption class="gallery-content centered">
+								<h4>PRODUCT</h4>
+								<a href="#">Getting started with Sedna <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							</figcaption>	
+						</figure>
 					</div>
 					<div class="col-md-4 remove-both-padding">
-						<img src="../images/gallery2.png" alt="">
-						<div class="gallery-content centered">
-							<h4>TECHNOLOGY</h4>
-							<a href="#">Why IE8 support is deminishing <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-						</div>
+						<figure>
+							<a class="fancybox" rel="group" href="../images/gallery2.png">
+								<div class="img-overlay">
+									<div class="overlay"><i class="fa fa-search" aria-hidden="true"></i></div>
+									<img src="../images/gallery2.png">
+								</div>
+							</a>
+							<figcaption class="gallery-content centered">
+								<h4>TECHNOLOGY</h4>
+								<a href="#">Why IE8 support is deminishing <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							</figcaption>	
+						</figure>
 					</div>
 					<div class="col-md-4 remove-both-padding">
-						<img src="../images/gallery1.png" alt="">
-						<div class="gallery-content centered">
-							<h4>PRODUCT</h4>
-							<a href="#">Sedna tutorial: How to begin your… <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-						</div>
+						<figure>
+							<a class="fancybox" rel="group" href="../images/gallery1.png">
+								<div class="img-overlay">
+									<div class="overlay"><i class="fa fa-search" aria-hidden="true"></i></div>
+									<img src="../images/gallery1.png">
+								</div>
+							</a>
+							<figcaption class="gallery-content centered">
+								<h4>TUTORIAL</h4>
+								<a href="#">Sedna tutorial: How to begin your… <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							</figcaption>	
+						</figure>
 					</div>
 				</div>
-
 				<div class="btn-more-news centered">
 					<button>MORE NEWS</button>
 				</div>
-			</div>
+			</section>
 
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 			  <!-- Indicators -->
@@ -321,21 +350,23 @@
 						<h2>Get started with Sedna, absolutely free</h2>
 						<p>Grab your copy today, exclusively from Codrops</p>
 
-						<form action="" class="centered">
-							<div class="form-group">
-								<div class="input-group">
-									<div class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-									<input type="text" class="form-control" id="exampleInputAmount" placeholder="Enter your email">
+						<div class="form-content">
+							<form action="" class="centered">
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+										<input type="text" class="form-control" id="exampleInputAmount" placeholder="Enter your email">
+									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<div class="input-group">
-									<div class="input-group-addon"><i class="fa fa-lock" id="lock" aria-hidden="true"></i></div>
-									<input type="text" class="form-control" id="exampleInputAmount" placeholder="Enter your password">
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-addon"><i class="fa fa-lock" id="lock" aria-hidden="true"></i></div>
+										<input type="text" class="form-control" id="exampleInputAmount" placeholder="Enter your password">
+									</div>
 								</div>
-							</div>
-							<button type="submit" class="btn">SIGN UP FOR FREE</button>
-						</form>
+								<button type="submit" class="btn">SIGN UP FOR FREE</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -348,61 +379,80 @@
 
   		<footer>
   			<div class="footer-container">
-  				<!-- <div class="row"> -->
-  					<div class="footer-content-a">
-  						<div class="content-a">
-  							<div class="footer-line"></div>
-	  						<div class="footer-nav">
-	  							<nav>
-	  								<ul class="nav">
-		  								<li><a href="#">FEATURES</a></li>
-		  								<li><a href="#">PRICING</a></li>
-		  								<li><a href="#">SIGN UP</a></li>
-		  								<li><a href="#">LICENCE</a></li>
-		  								<li><a href="#">CODROPS</a></li>
-		  								<li><a href="#">PETER FINLAN</a></li>
-		  							</ul>
-	  							</nav>
-	  						</div>
+					<div class="footer-content-a">
+						<div class="content-a">
+							<div class="footer-line"></div>
+  						<div class="footer-nav">
+  							<nav>
+  								<ul class="nav">
+	  								<li><a href="#">FEATURES</a></li>
+	  								<li><a href="#">PRICING</a></li>
+	  								<li><a href="#">SIGN UP</a></li>
+	  								<li><a href="#">LICENCE</a></li>
+	  								<li><a href="#">CODROPS</a></li>
+	  								<li><a href="#">PETER FINLAN</a></li>
+	  							</ul>
+  							</nav>
+  						</div>
 
-	  						<div class="copyright-licence">
-	  							<p>Copyright © 2015 <b>Sedna</b></p>
-	  							<p><b>Licence</b> | Design & Developed by <b>Peter Finlan</b></p>
-	  						</div>
-	  					</div>
+  						<div class="copyright-licence">
+  							<p>Copyright © 2015 <b>Sedna</b></p>
+  							<p><b>Licence</b> | Design & Developed by <b>Peter Finlan</b></p>
+  						</div>
   					</div>
+					</div>
 
-  					<div class="footer-content-b">
-	  					<div class="content-b">
-	  						<h3>SHARE SEDNA WITH YOUR FRIENDS</h3>
-	  						<div class="">
-	  							<div class="col-md-2">
-	  								<a href=""><img src="../images/tweet.png" alt=""></a>
-	  								<a href=""><img src="../images/fb.png" alt=""></a>
-	  							</div>
-	  							<div class="col-md-2">
-	  							</div>
-	  						</div>
-	  					</div>
-	  				</div>
-<!-- 
-  				</div> -->
-
+					<div class="footer-content-b">
+  					<div class="content-b">
+  						<h3>SHARE SEDNA WITH YOUR FRIENDS</h3>
+  						<div class="">
+  							<div class="col-md-4">
+  								<a href=""><img src="../images/tweet.png" alt=""></a>
+  								<a href=""><img src="../images/fb.png" alt=""></a>
+  							</div>
+  							<div class="col-md-2">
+  							</div>
+  						</div>
+  					</div>
+  				</div>
   			</div>
   		</footer>
 
   	</div>
-  	<script src="../scripts/sedna.js"></script>
-		<script src="../scripts/jQuery-2.1.4.min.js"></script>
-		<script src="../scripts/bootstrap.min.js"></script>
-		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<!-- <script type="text/javascript" src="slick/slick.min.js"></script> -->
-  </body>
-  <script>
-		causeRepaintsOn = $("h1, h2, h3, h4, p");
+  			<script src="../scripts/sedna.js"></script>
 
-		$(window).resize(function() {
-		  causeRepaintsOn.css("z-index", 1);
+			<!-- 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+        <script>window.jQuery || document.write('<script src="../scripts/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="../scripts/vendor/bootstrap.min.js"></script>
+
+        <script src="../scripts/plugins.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+  </body>
+  <script type="text/javascript">
+
+  	$(document).ready(function() {
+
+			$(".fancybox").fancybox({
+				openEffect : 'elastic',
+				closeEffect : 'elastic'
+			});
+
+			// causeRepaintsOn = $("h1, h2, h3, h4, p");
+
+			// $(window).resize(function() {
+			//   causeRepaintsOn.css("z-index", 1);
+			// });
+		
 		});
   </script>
 </html>
