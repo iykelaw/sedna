@@ -1,6 +1,7 @@
 // Import modules
 @import 'modules/colors';
 @import 'modules/mixin';
+@import 'modules/animate';
 
 // import partials scss
 @import 'partials/reset';
@@ -47,9 +48,93 @@ body{
 //MAIN
 .mobile-layout-nav{
 
-  @include respond-to(handhelds) { display: block;}
-  @include respond-to(medium-screens) { display: block;}
-  @include respond-to(wide-screens) { display: none;}
+  // @include respond-to(handhelds) { display: block;}
+  // @include respond-to(medium-screens) { display: block;}
+  // @include respond-to(wide-screens) { display: none;}
+
+  nav{
+    border: none;
+    background: $dark-gray;
+
+    .navbar-header{
+
+      > a{
+        text-decoration: none;
+        color: $logo-gray;
+        font-family: OpenSans-Semibold;
+        font-size: 24px;
+        letter-spacing: 4.99px;
+        width: 102px;
+        height: 28px;
+
+        @include respond-to(wide-screens) { padding-top: 35px;}
+
+        &:hover{
+          color: $logo-gray;
+        }
+      }
+    }
+
+    .eee{
+      color: white;
+    }
+
+    .top-links{
+      padding-left: 105px;
+
+      @include respond-to(handhelds) { padding-left: 50px;}
+      @include respond-to(medium-screens) { padding-left: 50px;}
+    }
+    .navbar-collapse{
+      @include respond-to(wide-screens) { padding-top: 20px;}
+
+      > ul{
+
+        > li{
+
+          > a{
+            font-size: 13px;
+            color: white;
+
+            &:active, 
+            &:hover, 
+            &:focus,
+            &.active{
+              color: white;
+              background-color: $logo-gray;
+            }
+          }
+        }
+      }
+    }
+    .buttons{
+      > a{
+        margin-left: 22px;
+        font-size: 13px;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @include respond-to(handhelds) { margin-top: 8px;}
+        @include respond-to(medium-screens) { margin-top: 8px;}
+        @include respond-to(wide-screens) { margin-top: 8px;}
+
+        &:active, 
+        &.active {
+          border: 2px solid white;
+          border-radius: 40px;
+        }
+      }
+    }
+    .keyline{
+      opacity: 0.2;
+      padding-top: 30px;
+      border-bottom: 1px solid white;
+
+      @include respond-to(handhelds) { display: none;}
+      @include respond-to(medium-screens) { display: none;}
+    }
+  }
 }
 
 // header and main navigation
@@ -58,7 +143,7 @@ body{
   width: 100%;
   // height: 750px;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 
   @include respond-to(handhelds) { background-size: cover; @include clearfix;}
   @include respond-to(medium-screens) { background-size: cover; @include clearfix;}
@@ -122,11 +207,11 @@ body{
             color: white;
             padding-left: 20px;
             padding-right: 20px;
-          }
-        
-          .mybtn:active, .mybtn.active {
-            border: 2px solid white;
-            border-radius: 40px;
+
+            &:active, &.active {
+              border: 2px solid white;
+              border-radius: 40px;
+            }
           }
         }
       }
@@ -139,14 +224,17 @@ body{
     }
 
     header{
+      position: relative;
+      padding-bottom: 100px;
+
       .header-wrapper{
-        padding-top: 150px;
+        padding-top: 265px;
         color: white;
         width: 829px;
         margin: 0 auto;
 
-        @include respond-to(handhelds) { width: 100%; }
-        @include respond-to(medium-screens) { width: 100%; }
+        @include respond-to(handhelds) { width: 100%; padding-top: 200px;}
+        @include respond-to(medium-screens) { width: 100%; padding-top: 200px;}
 
         .header-title{
           @include respond-to(handhelds) { padding: 0px 10px; }
@@ -166,11 +254,14 @@ body{
         .header-btn{
           padding-top: 80px;
 
+
           > button{
-            margin-left: 20px;
             width: 205px;
             height: 55px;
             color: $btn-pink;
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-right: 20px;
             background-color: transparent;
             padding: 15px 20px 15px 20px;
             border: 2px solid $btn-pink;
@@ -187,12 +278,21 @@ body{
     }
     
     .arrow-down{
-      padding-top: 125px;
-      padding-bottom: 20px;
+      color: #fff;
+      font-size: 30px;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
 
-      > i{
-        font-size: 30px;
-        color: white; 
+      > a{
+        text-decoration: none;
+        > i{
+          font-size: 30px;
+          color: white; 
+        }
       }
     }
   }
@@ -207,37 +307,39 @@ body{
   .col-md-4{
     @include respond-to(handhelds) { @include clearfix; }
     @include respond-to(medium-screens) { @include clearfix; }
-  }
-  .intro-content{
-    @include respond-to(handhelds) { margin: 0 auto; width: 50%; }
-    @include respond-to(medium-screens) { margin: 0 auto; width: 50%; }
 
+    > .intro-content{
+      @include respond-to(handhelds) { width: 350px; margin: 0 auto; }
+      @include respond-to(medium-screens) { width: auto; margin: 0 auto; }
+      // @include respond-to(wide-screens) { width: 350px; margin: 0 auto;}
 
-    .img-icon{
-      float: left;
-      width: 50px;
-      height: 50px;
-      padding: 20px 0px 0px 10px;
-    }
-    .img-icon-content{
-      width: 285px;
-      float: right;
-
-      > h1{
-        font-family: OpenSans-Semibold;
-        font-size: 15px;
-        color: $blackish;
+      > .img-icon{
+        float: left;
+        width: 50px;
+        height: 50px;
+        padding: 20px 0px 0px 10px;
       }
+      > .img-icon-content{
+        width: 285px;
+        float: right;
 
-      > p{
-        font-family: $p-font-family;
-        font-size: 15px;
-        color: $lighter-gray;
-        line-height: 25px;
+        @include respond-to(medium-screens) {  width: 75%; }
+
+        > h1{
+          font-family: OpenSans-Semibold;
+          font-size: 15px;
+          color: $blackish;
+        }
+
+        > p{
+          font-family: $p-font-family;
+          font-size: 15px;
+          color: $lighter-gray;
+          line-height: 25px;
+        }
       }
     }
   }
-  
 }
 
 //Section Product class
@@ -251,17 +353,27 @@ body{
   @include respond-to(medium-screens) { height: auto; }
 
   .productImg{
-    width: 760px;
+    height: 760px;
     padding-top: 119px;
+
+    @include respond-to(handhelds) { height: auto; }
+
+    > img{
+      width: 100%;
+      height: 100%;
+
+      @include respond-to(handhelds) { height: 50%; }
+      // @include respond-to(medium-screens) { width: 100%; }
+    }
   }
 
   .moblie-img-content{
-    width: 560px;
-    float: left;
-    padding: 100px 0px 0px 115px;
+    // width: 560px;
+    // float: left;
+    padding: 100px 115px 0px 15px;
 
-    @include respond-to(handhelds) { margin: 0 auto; padding: 100px 0px; float: none; width: 100%; }
-    @include respond-to(medium-screens) { margin: 0 auto; padding: 100px 0px; float: none; width: 100%; }
+    @include respond-to(handhelds) { margin: 0 auto; padding: 100px 15px; float: none; width: 100%; }
+    @include respond-to(medium-screens) { margin: 0 auto; padding: 100px 15px; float: none; width: 100%; }
 
     > h1{
       font-size: 24px;
@@ -284,8 +396,8 @@ body{
     .sub-content{
       height: 115px;
 
-      @include respond-to(handhelds) { margin: 0 auto; width: 50%; padding: 10px 5px;}
-      @include respond-to(medium-screens) { margin: 0 auto; width: 50%; padding: 10px 5px;}
+      // @include respond-to(handhelds) { margin: 0 auto; width: 300px; padding: 10px 5px;}
+      // @include respond-to(medium-screens) { margin: 0 auto; width: 300px; padding: 10px 5px;}
 
       .row-img{
         width: 50px;
@@ -297,6 +409,9 @@ body{
         width: 275px;
         float: left;
         padding-left: 10px;
+
+        @include respond-to(handhelds) { width: 250px; }
+        // @include respond-to(medium-screens) { width: 235px; }
 
         > h1{
           font-family: OpenSans-Semibold;
@@ -330,8 +445,8 @@ body{
       float: right;
       padding-right: 60px;
 
-      @include respond-to(handhelds) { @include centered; margin: 0 auto; float: none; padding: 0% 0% 10% 0%;}
-      @include respond-to(medium-screens) { @include centered; margin: 0 auto; float: none; padding: 0% 0% 10% 0%;}
+      @include respond-to(handhelds) {text-align: justify; margin: 0 auto; width: 75%; float: none; padding: 0% 0% 10% 0%;}
+      @include respond-to(medium-screens) {text-align: justify; margin: 0 auto; width: 75%; float: none; padding: 0% 0% 10% 0%;}
 
       > h1{
         font-family: OpenSans;
@@ -356,6 +471,11 @@ body{
         padding: 15px 30px 15px 30px;
       }
     }
+    .design-img-holder{
+      > img{
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -364,6 +484,7 @@ body{
 .customise{
   height: 595px;
   margin-bottom: 80px;
+  position: relative;
 
   .back-drop{
     background-image: url("../images/mid-backdrop.png");
@@ -420,6 +541,17 @@ body{
 
   .customise-img{
     padding-top: 50px;
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+    > img{
+      @include respond-to(handhelds) { width: 30%}
+    }
   }
 }
 
@@ -485,23 +617,74 @@ body{
   .gallery-holder{
     margin-bottom: 55px;
 
-    img{
-      width: 100%;
-    }
-    .gallery-content{
-      margin-bottom: 55px;
+    figure {
+    
+      a {
+        > .img-overlay{
+          overflow: hidden;
+          position: relative;
+        
+          > .overlay{
+            position: absolute;    
+            width: 100%;
+            height: 100%;
+            background: $overlay;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
+            opacity: 0;
 
-      > h4{
-        margin: 30px 0px;
-        font-family: OpenSans-Semibold;
-        font-size: 11px;
-        color: $gray-h;
+            > i{
+              color: white;
+              font-size: 30px;
+              position: absolute;
+              top: 25px;
+              right: 35px;
+            } 
+          }
+          > img{
+            width: 100%;
+            height: 100%;
+            transform:scale(1);
+            -ms-transform:scale(1);
+            -moz-transform:scale(1);
+            -webkit-transform:scale(1);
+            -o-transform:scale(1);
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
+          }
+          &:hover >img {   
+            cursor: pointer;
+              transform:scale(1.5);
+              -ms-transform:scale(1.5);
+              -moz-transform:scale(1.5);
+              -webkit-transform:scale(1.5);
+              -o-transform:scale(1.5);
+          }
+          &:hover .overlay{
+            opacity: 1;
+            z-index: 9;
+          }
+        }
       }
-      > a{
-        font-family: OpenSans-Light;
-        font-size: 15px;
-        color: $link-gray;
-        text-decoration: none;
+      .gallery-content{
+        margin-bottom: 55px;
+
+        > h4{
+          margin: 30px 0px;
+          font-family: OpenSans-Semibold;
+          font-size: 11px;
+          color: $gray-h;
+        }
+        > a{
+          font-family: OpenSans-Light;
+          font-size: 15px;
+          color: $link-gray;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -578,46 +761,52 @@ body{
       margin-top: 20px;
       margin-bottom: 50px;
     }
-
-    form{
+    .form-content{
       width: 400px;
       margin: 0 auto;
 
-      > button{
-        width: 400px;
-        height: 55px;
-        color: white;
-        background: $btn-pink;
-        border-radius: 5px;
-        font-family: OpenSans;
-        font-size: 13px;
-      }
+      @include respond-to(handhelds) { width: auto;}
 
-      .input-group{
-        height: 55px;
+      form{ 
+        margin: 0 auto;
 
-        input{
+        > button{
+          width: 100%;
           height: 55px;
-          border-left: 0px;
+          color: white;
+          background: $btn-pink;
+          border-radius: 5px;
+          font-family: OpenSans;
+          font-size: 13px;
         }
-        .input-group-addon{
-          background-color: white;
-          color: $btn-pink;
-          
-          #lock{
-            padding-right: 23px;
-            font-size: 19px;
-          }
 
-          > i{
-            font-size: 14px;
-            border-right: 1px solid #ccc;
-            padding: 5px 22px 0px 10px;
-            height: 20px;
+        .input-group{
+          height: 55px;
+
+          input{
+            height: 55px;
+            border-left: 0px;
+          }
+          .input-group-addon{
+            background-color: white;
+            color: $btn-pink;
+            
+            #lock{
+              padding-right: 23px;
+              font-size: 19px;
+            }
+
+            > i{
+              font-size: 14px;
+              border-right: 1px solid #ccc;
+              padding: 5px 22px 0px 10px;
+              height: 20px;
+            }
           }
         }
       }
     }
+    
   }
 }
 
@@ -681,12 +870,17 @@ footer{
           li{
             display: inline-block;
 
+            @include respond-to(handhelds) { display: block;}
+            // @include respond-to(medium-screens) { display: block;}
+
             > a{
               font-family: OpenSans-Semibold;
               font-size: 13px;
               color: white;
               line-height: 40px;
               margin-bottom: 40px;
+
+              @include respond-to(handhelds) { margin-bottom: 0px; padding: 0px;}
             }
           }
           .nav{
@@ -718,7 +912,7 @@ footer{
       padding-top: 115px;
       padding-left: 70px;
       padding-bottom: 100px;
-      width: 680px;
+      width: 695px;
       height: 526px;
       float: right;
       background-color: $light-black;
@@ -758,4 +952,3 @@ footer{
     @include clearfix;
   }
 }
-
